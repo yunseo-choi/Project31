@@ -2,51 +2,142 @@
 #include <stdio.h>
 
 int main(){
-	int x = 0;
-	int y = 0;
-	int dump;
-	int num = 0;
+	int bit;
+	int x;	
+	int y;
+	do {
+		printf("          [1] 비트 AND(&)\n     ");
+		printf("          [2] 비트 OR(|)\n       ");
+		printf("          [3] 비트 XOR(^)\n      ");
+		printf("          [4] 비트 COMPLEMENT(~)\n     ");
+		printf("          [0] 종료 (stop)            ");
 
-	printf("교환할 두 정수를 입력하세요. >> ");
-	scanf_s("%d %d", &x,&y);
+		puts("");
+		puts("");
+		puts("");
 
-	printf("입력한 두 수 : a = %d and b = %d\n", x, y);
+		printf("위 연산 중 하나를 선택하세요. >>");
+		scanf_s("%d", &bit);
+		puts("");
 
-	printf("임시 저장 장소   이용방법[1]");
-	printf("덧셈과 뺄셈으로    교환 방법[2]");
-	printf("곱셈과 나눗셈으로 교환 방법[3]");
-	printf("XOR 연산자 ^       이용 방법[4]");
+		if (bit == 0)
+		{
+			printf("종료합니다.\n");
+			break;
+		}
 
-	printf("위 교환 방법 중 한 번호를 선택하세요. >>");
-	scanf_s("%d", &num);
-	if (num == 1) {
-		dump = x;
-		x = y;
-		y = dump;
-	}
-	else if (num == 2) {
-		x = x + y;
-		y = x - y; 
-		x = x - y;
-	}
-	else if (num == 3) {
-		x = x * y;
-		y = x / y;
-		x = x ^ y;
-	}
-	else if (num == 4) {
-		x = x ^ y;
-		y = x / y;
-		x = x ^ y;
-	}
-	
-	printf("교환한 두 수: a = %d and b = %d", x, y);
 
-	
 
-	
-	
-	
-	
-	
-	}
+
+		if (bit == 1)
+		{
+			printf("비트 연산할 두 정수 입력 >>  ");
+			scanf_s("%d %d", &x, &y);
+			printf("x = ");
+			for (int i = 31; i >= 0; i--)
+			{
+				printf("%c", ((x >> i) & 1) ? '|' : '0');
+			}
+			printf("    %d\n", x);
+			puts("");
+			puts("");
+			puts("");
+			printf("y = ");
+			for (int j = 31; j >= 0; j--)
+			{
+				printf("%c", ((y >> j) & 1) ? '1' : '0');
+			}
+			printf("    %d\n", y);
+			puts("");
+			puts("");
+			puts("");
+
+			printf("x & y = ");
+			int z = x & y;
+			for (int t = 31; t >= 0; t--)
+			{
+				printf("");
+			}
+		}
+				if (bit == 2)
+				{
+				printf("비트 연산할 두 정수 입력 >>  ");
+				scanf_s("%d %d", &x, &y);
+				printf("x = ");
+				for (int i = 31; i >= 0; i--)
+				{
+					printf("%c", ((x >> i) & 1) ? '|' : '0');
+				}
+				printf("    %d\n", x);
+				puts("");
+				puts("");
+				puts("");
+				printf("y = ");
+				for (int j = 31; j >= 0; j--)
+				{
+					printf("%c", ((y >> j) & 1) ? '1' : '0');
+				}
+				printf("    %d\n", y);
+				puts("");
+				puts("");
+				puts("");
+
+				printf("x | y = ");
+				int z = x | y;
+				for (int t = 31; t >= 0; t--)
+				{
+					printf("");
+				}
+				}
+				if (bit == 3)
+				{
+					printf("비트 연산할 두 정수 입력 >>  ");
+					scanf_s("%d %d", &x, &y);
+					printf("x = ");
+					for (int i = 31; i >= 0; i--)
+					{
+						printf("%c", ((x >> i) & 1) ? '|' : '0');
+					}
+					printf("    %d\n", x);
+					puts("");
+					puts("");
+					puts("");
+					printf("y = ");
+					for (int j = 31; j >= 0; j--)
+					{
+						printf("%c", ((y >> j) & 1) ? '1' : '0');
+					}
+					printf("    %d\n", y);
+					puts("");
+					puts("");
+					puts("");
+
+					printf("x ^ y = ");
+					int z = x ^ y;
+					for (int t = 31; t >= 0; t--)
+					{
+						printf("");
+					}
+				}
+				if (bit == 4)
+				{
+					printf("비트 연산할 두 정수 입력 >>  ");
+					scanf_s("%d", &x);
+					printf("x = ");
+					for (int i = 31; i >= 0; i--)
+					{
+						printf("%c", ((x >> i) & 1) ? '1' : '0');
+					}
+					printf("    %d\n\n", x);
+					printf("x= ");
+					int z = ~x;
+					for (int t = 31; t >= 0; t--)
+					{
+						printf("%c", ((z >> t) & 1) ? '1' : '0');
+					}
+					printf("    %d\n\n\n", z);
+
+				}
+
+	}while (1);
+}
