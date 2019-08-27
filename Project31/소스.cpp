@@ -96,7 +96,7 @@ int main(){
 					printf("x = ");
 					for (int i = 31; i >= 0; i--)
 					{
-						printf("%c", ((x >> i) & 1) ? '|' : '0');
+						printf("%c", ((x >> i) & 1) ? '1' : '0');
 					}
 					printf("    %d\n", x);
 					puts("");
@@ -116,8 +116,10 @@ int main(){
 					int z = x ^ y;
 					for (int t = 31; t >= 0; t--)
 					{
-						printf("");
+						printf("%c", ((y >> t) & 1) ? '1' : '0');
+						
 					}
+					printf("     %d\n", z);
 				}
 				if (bit == 4)
 				{
